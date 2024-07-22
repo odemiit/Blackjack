@@ -5,6 +5,7 @@
 #Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
 #Difficulty Expert 🤯: Only use Hint 1 to complete the project.
 
+import random
 ############### Our Blackjack House Rules #####################
 
 ## The deck is unlimited in size. 
@@ -30,6 +31,20 @@
 
 #Hint 3: Download and read this flow chart I've created: 
 #   https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+user_cards = []
+computer_cards = []
+
+#for loop to deal 2 random cards to the user and the computer
+for card in range(2):
+  user_cards.append(random.choice(cards))
+  computer_cards.append(random.choice(cards))
+
+
+
+
 
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.
