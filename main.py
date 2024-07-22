@@ -42,8 +42,15 @@ for card in range(2):
   user_cards.append(random.choice(cards))
   computer_cards.append(random.choice(cards))
 
+user_score = 0
+computer_score = 0
 
+#Add up the user and computer's score
+for number in user_cards:
+  user_score += number
 
+for number in computer_cards:
+  computer_score += number
 
 
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
