@@ -42,15 +42,12 @@ for card in range(2):
   user_cards.append(random.choice(cards))
   computer_cards.append(random.choice(cards))
 
-user_score = 0
-computer_score = 0
+#Function to calculate the score of the user or computer
+def calculate_score(card_hand):
+  return sum(card_hand)
 
-#Add up the user and computer's score
-for number in user_cards:
-  user_score += number
-
-for number in computer_cards:
-  computer_score += number
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
 
 #Function to check if the user or computer has BlackJack
 def check_blackjack(score):
@@ -61,6 +58,24 @@ def check_blackjack(score):
 
 user_blackjack = check_blackjack(user_score)
 computer_blackjack = check_blackjack(computer_score)
+
+ace_count = 0
+
+#check who won
+if user_blackjack:
+  print("The user has won!")
+elif computer_blackjack:
+  print("The computer has won!")
+elif user_score > 21:
+  #loop to see if they have an ace
+  for num in user_cards:
+    if num == 11:
+      ace_count += 1
+      user_cards.remove(num)
+      user_cards.append(1)
+  #If the ace counts as a 1 instead of 11, are they still over 21?
+    
+    print("You lose")
 
 # print(user_score)
 # print(user_blackjack)
