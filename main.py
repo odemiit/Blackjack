@@ -52,6 +52,20 @@ for number in user_cards:
 for number in computer_cards:
   computer_score += number
 
+#Function to check if the user or computer has BlackJack
+def check_blackjack(score):
+  if score == 21:
+    return True
+  else:
+    return False
+
+user_blackjack = check_blackjack(user_score)
+computer_blackjack = check_blackjack(computer_score)
+
+# print(user_score)
+# print(user_blackjack)
+# print(computer_score)
+# print(computer_blackjack)
 
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.
