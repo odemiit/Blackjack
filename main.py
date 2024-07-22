@@ -37,6 +37,10 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 user_cards = []
 computer_cards = []
 
+#Function to deal cards to the user or computer
+def deal_cards(card_deck):
+  card_deck.append(random.choice(cards))
+  
 #for loop to deal 2 random cards to the user and the computer
 for card in range(2):
   user_cards.append(random.choice(cards))
@@ -74,8 +78,15 @@ elif user_score > 21:
       user_cards.remove(num)
       user_cards.append(1)
   #If the ace counts as a 1 instead of 11, are they still over 21?
-    
+  new_user_score = calculate_score(user_cards)
+  if new_user_score > 21:
     print("You lose")
+  else:
+    #ask the user if they want another card
+    another_card = input("Do you want to get another card? ")
+    if another_card == "Yes":
+      #deal card and repeat checking scores process again
+
 
 # print(user_score)
 # print(user_blackjack)
